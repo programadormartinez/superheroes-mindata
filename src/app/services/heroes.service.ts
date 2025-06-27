@@ -45,9 +45,14 @@ export class HeroesService {
       if (index !== -1) {
         list[index] = hero;
       }
-      return list;
+      return [...list];
     });
   }
+
+  refreshHeroes(): void {
+    this._heroes.update(list => [...list]);
+  }
+
   constructor() {
     effect(() => {
       const totalEnPagina = this.heroesPage().length;

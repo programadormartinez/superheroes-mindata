@@ -38,10 +38,11 @@ export class HeroeComponent {
       return;
     }
     const heroeUpdate: Heroe = {
-      ...this.heroe()!,
+      ...this.heroe(),
       ...$event,
     };
     this.heroesSvc.editHeroe(heroeUpdate);
+    this.heroesSvc.refreshHeroes();
     this.router.navigate(['/']);
   }
 }

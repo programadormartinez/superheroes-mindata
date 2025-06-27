@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { UppercaseDirective } from '../../directives/uppercase.directive';
 
 @Component({
   selector: 'app-heroe-edit',
@@ -31,6 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
+    UppercaseDirective,
   ],
 })
 export class HeroeEditComponent {

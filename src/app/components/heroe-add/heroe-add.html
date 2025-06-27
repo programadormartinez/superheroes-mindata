@@ -1,4 +1,3 @@
-
 <ng-container>
   <form
     [formGroup]="form"
@@ -16,6 +15,7 @@
             matInput
             formControlName="name"
             placeholder="Ingresa el nombre"
+            appUppercase
             required
           />
           @if(form.controls['name'].hasError('required')){
