@@ -1,0 +1,12 @@
+
+
+ <app-heroes-list  [heroes]="heroesPage()"
+                  (pageChange)="changePage($event)"
+                  (editHeroe)="goToEditHeroe($event)"
+                  (deleteHeroe)="deleteHero($event)"
+                  (searchHeroeNameEvent)="searchHeroeName($event)"
+                  (searchHeroeIdEvent)="searchHeroeForId($event)"
+                  (addHeroeEvent)="goToAddHeroe()"
+
+                  >
+</app-heroes-list >

@@ -1,0 +1,74 @@
+@if(heroe()) {
+<ng-container>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="saveHeroe()"
+    class="heroes-form"
+  >
+    <mat-card>
+      <mat-card-header class="p-3">
+        <mat-card-title>Editar héroe: {{ heroe()!.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="grid gap-4 p-5">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            formControlName="name"
+            placeholder="Ingresa el nombre"
+            required
+          />
+          @if(form.controls['name'].hasError('required')){
+          <mat-error> El nombre es obligatorio </mat-error>
+          }
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Poder</mat-label>
+          <input
+            matInput
+            formControlName="power"
+            placeholder="Ingresa el poder"
+            required
+          />
+          @if(form.controls['power'].hasError('required')){
+          <mat-error> El poder es obligatorio </mat-error>
+          }
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Universo</mat-label>
+          <input
+            matInput
+            formControlName="universe"
+            placeholder="Ingresa el universo"
+            required
+          />
+          @if(form.controls['universe'].hasError('required')){
+          <mat-error> El universo es obligatorio </mat-error>
+          }
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="flex justify-end gap-3 mt-4">
+        <button mat-stroked-button type="button" (click)="cancelEdit()">
+          Cancelar
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          Guardar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</ng-container>
+} @else {
+<ng-template #loading>
+  <div class="text-center my-10">
+    <p class="mt-4">Cargando héroe…</p>
+  </div>
+</ng-template>
+}

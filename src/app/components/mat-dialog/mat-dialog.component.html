@@ -1,0 +1,6 @@
+<p mat-dialog-title>¿Deseas eliminar a {{data.heroe.name}}?</p>
+<mat-dialog-content> Una vez eliminado, el super heroe no sacara mas peliculas o series, dibujos, etc. </mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton (click)="onCancelClick()">No</button>
+  <button matButton (click)="onDeleteClick()">Eliminar</button>
+</mat-dialog-actions>
